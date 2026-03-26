@@ -1,0 +1,23 @@
+model_id: "Tongyi-MAI/Z-Image"
+prompt_file: "prompts/prompt.txt"
+output_path: "outputs/sample.png"
+
+# 出力画像の解像度
+height: 1024
+width: 1024
+# 画像生成では最初にノイズから始めて,stepを重ねながら画像らしい形にしていく
+# 推奨inference stepsは28〜50
+num_inference_steps: 32
+# プロンプトに従わせる強さ(推奨guidance scale: 3.0 ~ 5.0)
+guidance_scale: 4.0
+# 入れたくない言葉を設定できる(不要な内容の抑制に強い)
+negative_prompt: ""
+seed: 42
+
+device: "cuda"
+# float32: 安定だが重い 
+# float16: 軽いが環境によっては不安定なことがある
+# bfloat16: 軽さと安定性のバランスが比較的良い
+dtype: "bfloat16"
+prefer_specialized_pipeline: true
+allow_remote_code_fallback: true
