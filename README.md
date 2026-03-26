@@ -79,13 +79,13 @@ z-image/
 ## セットアップ
 
 ```bash
-pip install -e .
+uv sync
 ```
 
 ## 実行
 
 ```bash
-python src/inference.py
+uv run inference.py
 ```
 
 生成画像は `outputs/sample.png` に保存されます。
